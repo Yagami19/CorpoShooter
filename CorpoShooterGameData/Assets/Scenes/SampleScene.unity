@@ -548,18 +548,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c1f5be9336b2f74cb0d2a0c6934d16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showDebug: 1
-  mazeMat1: {fileID: 0}
-  mazeMat2: {fileID: 0}
-  startMat: {fileID: 0}
-  treasureMat: {fileID: 0}
+  showDebug: 0
   roomCount: 100
-  startX: 0
-  endX: 0
-  sizeRowsRandomMin: 11
-  sizeColsRandomMin: 11
-  sizeRowsRandomMax: 20
-  sizeColsRandomMax: 20
+  sizeRowsRandomMin: 20
+  sizeColsRandomMin: 20
+  sizeRowsRandomMax: 30
+  sizeColsRandomMax: 30
   floor: {fileID: 4842928330733659112, guid: ec1679d997a295b4f94ade58265f344c, type: 3}
   wall: {fileID: 5905989424669357989, guid: 256f57ef054d45347b9379dd69b6ee5d, type: 3}
   obstacle01: {fileID: 898842911763502091, guid: f7b132bf5e6831b46b0acb6c56a9e8bb,
@@ -616,7 +610,7 @@ PrefabInstance:
     - target: {fileID: 6243051760402448473, guid: ec1679d997a295b4f94ade58265f344c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25.44
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6243051760402448473, guid: ec1679d997a295b4f94ade58265f344c,
         type: 3}
