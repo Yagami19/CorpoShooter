@@ -8,10 +8,10 @@ public class GenerateLevel : MonoBehaviour
     public bool showDebug;
 
     //materialy jakies costam beng XD
-   // [SerializeField] private Material mazeMat1;
-   // [SerializeField] private Material mazeMat2;
-   // [SerializeField] private Material startMat;
-   // [SerializeField] private Material treasureMat;
+    // [SerializeField] private Material mazeMat1;
+    // [SerializeField] private Material mazeMat2;
+    // [SerializeField] private Material startMat;
+    // [SerializeField] private Material treasureMat;
 
 
     //ilosc pokoi
@@ -23,7 +23,7 @@ public class GenerateLevel : MonoBehaviour
 
 
     //miejsce w tabeli, w ktorym sa drzwi wychodzace z pokoju
-   private int endDoorX;
+    private int endDoorX;
 
 
 
@@ -70,7 +70,7 @@ public class GenerateLevel : MonoBehaviour
     [SerializeField] private int routeHandlesRangeMin;
     [SerializeField] private int routeHandlesRangeMax;
 
-    
+
 
 
 
@@ -135,6 +135,7 @@ public class GenerateLevel : MonoBehaviour
 
 
     //generuj nowy poziom metoda
+
     public int[,] GenerateNewRoom()
     {
 
@@ -163,7 +164,7 @@ public class GenerateLevel : MonoBehaviour
         int[,] room = new int[sizeRows, sizeCols];
 
 
-      
+
 
         //wypelnienie pokoju scianami, najpierw wierszy a potem kolumn, albo na odwrot XD
         for (int i = 0; i < sizeRows; i++)
@@ -182,13 +183,13 @@ public class GenerateLevel : MonoBehaviour
         }
 
 
-        
+
 
         //zrobic assety i je kopiowac do sceny 
 
 
         //generowanie przeszkod
-        
+
         for (int i = 1; i < sizeRows - 1; i++)
         {
             for (int j = 1; j < sizeCols - 1; j++)
@@ -225,25 +226,25 @@ public class GenerateLevel : MonoBehaviour
                     if (obstacleRandom > obstaclePercent04 & j % 2 == 0)
                     {
 
-                            room[i, j] = 5;
-                            room[i, j + 1] = 9;
+                        room[i, j] = 5;
+                        room[i, j + 1] = 9;
 
 
-                        
+
                     }
 
 
-                
+
 
 
                     if (obstacleRandom > obstaclePercent05 & i % 2 == 0)
                     {
-                        
-                            room[i, j] = 6;
-                            room[i+1, j] = 9;
+
+                        room[i + 1, j] = 6;
+                        room[i, j] = 9;
 
 
-                        
+
 
 
 
@@ -264,7 +265,7 @@ public class GenerateLevel : MonoBehaviour
 
 
 
-   
+
 
 
 
@@ -274,11 +275,11 @@ public class GenerateLevel : MonoBehaviour
         //  startX = Random.Range(2, sizeCols - 2);
 
 
-        if (startDoorX<=0)
+        if (startDoorX <= 0)
         {
             startDoorX = sizeCols / 2;
 
-            
+
 
         }
         else
@@ -287,115 +288,72 @@ public class GenerateLevel : MonoBehaviour
 
         }
 
-        if (endDoorX >= room.GetUpperBound(1)-1)
+        if (endDoorX >= room.GetUpperBound(1) - 1)
         {
 
-            startDoorX = Random.Range(2, sizeCols - 2) ;
-             
-             startPosY +=(endDoorX-startDoorX);
+            startDoorX = Random.Range(2, sizeCols - 2);
+
+            startPosY += (endDoorX - startDoorX);
 
 
-;
+            ;
 
 
-           // Debug.Log(endDoorX);
+            // Debug.Log(endDoorX);
 
-           
 
-          
-                
+
+
+
 
         }
 
         //Debug.Log("endX =" + endX + "sizeCols = " + sizeCols + " startX=" + startX + " upperbound1 " + room.GetUpperBound(1) + " ");
 
-       
+
 
         endDoorX = Random.Range(2, sizeCols - 2);
 
 
 
-
-
+        
         //Debug.Log("Edgecase01: " + startDoorX + " jedynga: " + room.GetUpperBound(0) + " dwujka: " + room.GetUpperBound(1));
-        room[0, startDoorX] = 0;
+        //room[0, startDoorX] = 0;
         //Debug.Log("Edgecase02" + startDoorX + " jedynga: " + room.GetUpperBound(0) + " dwujka: " + room.GetUpperBound(1));
-        room[0, startDoorX + 1] = 0;
-       
+        // room[0, startDoorX + 1] = 0;
+
 
         //poczatek drzwi, czyli skad generuje trase
-        room[1, startDoorX] = 0;
-        room[1, startDoorX + 1] = 0;
+        // room[1, startDoorX] = 0;
+        //room[1, startDoorX + 1] = 0;
         //koniec drzwi,czyli dokad generuje trase
-        room[sizeRows - 2, endDoorX] = 0;
+
 
 
         //Debug.Log("start dźwi: " + startDoorX + "koniedz dźwi XDD: " + endDoorX);
-
-        room[sizeRows - 2, endDoorX + 1] = 0;
-        room[sizeRows - 1, endDoorX] = 0;
-        room[sizeRows - 1, endDoorX + 1] = 0;
+        for (int i=1; i<7; i++)
+        {
+            room[sizeRows - i, endDoorX]= 0;
+            room[sizeRows - i, endDoorX+1] = 0;
+            room[i-1, startDoorX] = 0;
+            room[i-1, startDoorX + 1] = 0;
+        }
+        //room[sizeRows - 2, endDoorX] = 0;
+        //room[sizeRows - 2, endDoorX + 1] = 0;
+        //room[sizeRows - 1, endDoorX] = 0;
+        //room[sizeRows - 1, endDoorX + 1] = 0;
 
 
 
 
         //generowanie drogi
-        int routeHandlesNumber = Random.Range(routeHandlesRangeMin, routeHandlesRangeMax+1);
-        int[,] routeArray = new int[routeHandlesNumber,2];
-        
-
-
-        for (int i = 0; i < routeHandlesNumber; i++)
-        {
-
-            int _routeHandleX = Random.Range(1, sizeRows - 1); ;
-
-            int _routeHandleY = Random.Range(1, sizeCols - 1);
-            routeArray[i, 0] = _routeHandleX;
-            routeArray[i, 1] = _routeHandleY;
-
-
-            room[_routeHandleX, _routeHandleY] = 7;
-
-
-        }
 
 
 
-       //2(n+2)  - 2
-       //i to jest indeks routehandlera, 0 to wspolrzedna X, 1 to wspolrzedna Y czyli po petli i=startX i przeszkodaX same 0, przeszkoda0, przeszkoda  y same 0
+        //2(n+2)  - 2
+        //i to jest indeks routehandlera, 0 to wspolrzedna X, 1 to wspolrzedna Y czyli po petli i=startX i przeszkodaX same 0, przeszkoda0, przeszkoda  y same 0
 
-        for (int i = 1; i < room.GetUpperBound(0); i++)
-        {
-
-            for (int j = 1; j < room.GetUpperBound(1); j++)
-            {
-
-                int RouteX = 0;
-                int RouteY = 0;
-
-
-
-
-                room[0, startDoorX] = 0;
-                room[sizeRows - 1, endDoorX] = 0;
-
-
-
-
-
-
-            }
-
-
-        }
-
-
-        //Debug.Log("count: " + count);
-
-
-
-
+  
 
 
 
@@ -469,14 +427,14 @@ public class GenerateLevel : MonoBehaviour
 
                     case 5:
                         {
-                            Instantiate(obstacle04, new Vector3(i + startPosX, _floorPositionY+1, j +0.5f + startPosY), Quaternion.identity);
+                            Instantiate(obstacle04, new Vector3(i  + startPosX, _floorPositionY+1, j  + 0.5f + startPosY), Quaternion.identity);
                             break;
                         }
 
 
                     case 6:
                         {
-                            Instantiate(obstacle05, new Vector3(i - 0.5f+ startPosX, _floorPositionY+1, j + startPosY), Quaternion.identity);
+                            Instantiate(obstacle05, new Vector3(i -0.5f + startPosX, _floorPositionY+1, j + startPosY ), Quaternion.identity);
                             break;
                         }
 

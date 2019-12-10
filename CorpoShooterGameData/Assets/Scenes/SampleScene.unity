@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showDebug: 0
-  roomCount: 100
+  roomCount: 200
   sizeRowsRandomMin: 20
   sizeColsRandomMin: 20
   sizeRowsRandomMax: 30
@@ -571,6 +571,8 @@ MonoBehaviour:
   obstaclePercent03: 850
   obstaclePercent04: 900
   obstaclePercent05: 950
+  routeHandlesRangeMin: 0
+  routeHandlesRangeMax: 0
 --- !u!4 &2075838010
 Transform:
   m_ObjectHideFlags: 0
