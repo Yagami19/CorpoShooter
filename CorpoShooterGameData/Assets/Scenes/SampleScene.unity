@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -548,12 +548,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c1f5be9336b2f74cb0d2a0c6934d16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showDebug: 0
-  roomCount: 200
+  showDebug: 1
+  roomCount: 5
   sizeRowsRandomMin: 20
   sizeColsRandomMin: 20
   sizeRowsRandomMax: 30
   sizeColsRandomMax: 30
+  obstaclePercent01: 750
+  obstaclePercent02: 800
+  obstaclePercent03: 850
+  obstaclePercent04: 900
+  obstaclePercent05: 950
   floor: {fileID: 4842928330733659112, guid: ec1679d997a295b4f94ade58265f344c, type: 3}
   wall: {fileID: 5905989424669357989, guid: 256f57ef054d45347b9379dd69b6ee5d, type: 3}
   obstacle01: {fileID: 898842911763502091, guid: f7b132bf5e6831b46b0acb6c56a9e8bb,
@@ -566,13 +571,6 @@ MonoBehaviour:
     type: 3}
   obstacle05: {fileID: 3257216945454231505, guid: dfd729e251324424e8e96947f149ebd6,
     type: 3}
-  obstaclePercent01: 750
-  obstaclePercent02: 800
-  obstaclePercent03: 850
-  obstaclePercent04: 900
-  obstaclePercent05: 950
-  routeHandlesRangeMin: 0
-  routeHandlesRangeMax: 0
 --- !u!4 &2075838010
 Transform:
   m_ObjectHideFlags: 0

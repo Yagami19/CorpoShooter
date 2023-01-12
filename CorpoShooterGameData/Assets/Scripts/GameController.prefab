@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2799512468265944531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2799512468265944529}
+  - component: {fileID: 2799512468265944530}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2799512468265944529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2799512468265944531}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.0046215, y: -4.31, z: -7.5471163}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2799512468265944530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2799512468265944531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f5be9336b2f74cb0d2a0c6934d16b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showDebug: 0
+  roomCount: 200
+  sizeRowsRandomMin: 20
+  sizeColsRandomMin: 20
+  sizeRowsRandomMax: 30
+  sizeColsRandomMax: 30
+  floor: {fileID: 4842928330733659112, guid: ec1679d997a295b4f94ade58265f344c, type: 3}
+  wall: {fileID: 5905989424669357989, guid: 256f57ef054d45347b9379dd69b6ee5d, type: 3}
+  obstacle01: {fileID: 898842911763502091, guid: f7b132bf5e6831b46b0acb6c56a9e8bb,
+    type: 3}
+  obstacle02: {fileID: 4167719739719900526, guid: 9fe3ca9ad15cfed41bbd7a442da769d5,
+    type: 3}
+  obstacle03: {fileID: 1157984576971739507, guid: c30d2724ff9a39b459191205d89a55c2,
+    type: 3}
+  obstacle04: {fileID: 4965650682430669645, guid: 17c17a1151b553245a347e05e569019b,
+    type: 3}
+  obstacle05: {fileID: 3257216945454231505, guid: dfd729e251324424e8e96947f149ebd6,
+    type: 3}
+  obstaclePercent01: 750
+  obstaclePercent02: 800
+  obstaclePercent03: 850
+  obstaclePercent04: 900
+  obstaclePercent05: 950
