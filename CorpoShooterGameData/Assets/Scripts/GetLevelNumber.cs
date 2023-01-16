@@ -13,7 +13,7 @@ public class GetLevelNumber : MonoBehaviour
     // Awake as it is generated when scene is loaded
     void Awake()
     {
-        LevelNumber.roomCount = 5;
+       // LevelNumber.roomCount = 5;
     }
    //loading scene that generates levels
    public void LoadScene()
